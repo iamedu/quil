@@ -218,8 +218,12 @@
                    focusLost focusLostParent
                    noLoop noLoopParent})
 
+
 (defn -quil-init [state]
   [[] state])
+
+(defn -sketchFullScreen [this]
+  (:full-screen? (.state this)))
 
 (defn -meta [this]
   (.state this))
@@ -338,6 +342,7 @@
   [& opts]
   (let [options           (merge {:size [500 300]
                                   :target :frame
+                                  :full-screen? false
                                   :safe-draw-fn true}
                                  (apply hash-map opts))
         size              (validate-size! (:size options))
@@ -379,7 +384,7 @@
                                   :target-frame-rate (atom 60)}
                                  listeners)
         prx-obj           (quil.Applet. applet-state)]
-    (applet-run prx-obj title renderer target)
+    (PApplet/runSketch (into-array [title]) prx-obj)
     prx-obj))
 
 

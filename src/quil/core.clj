@@ -1714,18 +1714,12 @@
   (.getHeight (current-applet)))
 
 (def ^{:private true}
-  hint-options {:enable-opengl-4x-smooth PConstants/ENABLE_OPENGL_4X_SMOOTH
-                :enable-opengl-2x-smooth PConstants/ENABLE_OPENGL_2X_SMOOTH
-                :enable-native-fonts PConstants/ENABLE_NATIVE_FONTS
+  hint-options {:enable-native-fonts PConstants/ENABLE_NATIVE_FONTS
                 :disable-native-fonts PConstants/DISABLE_NATIVE_FONTS
                 :enable-depth-test PConstants/ENABLE_DEPTH_TEST
                 :disable-depth-test PConstants/DISABLE_DEPTH_TEST
                 :enable-depth-sort PConstants/ENABLE_DEPTH_SORT
                 :disable-depth-sort PConstants/DISABLE_DEPTH_SORT
-                :disable-opengl-error-report PConstants/DISABLE_OPENGL_ERROR_REPORT
-                :enable-opengl-error-report PConstants/ENABLE_OPENGL_ERROR_REPORT
-                :enable-accurate-textures PConstants/ENABLE_ACCURATE_TEXTURES
-                :disable-accurate-textures PConstants/DISABLE_ACCURATE_TEXTURES
                 :disable-depth-mask PConstants/DISABLE_DEPTH_MASK
                 :enable-depth-mask PConstants/ENABLE_DEPTH_MASK})
 
@@ -3894,7 +3888,7 @@
 
 (def ^{:private true}
   texture-modes {:image PApplet/IMAGE
-                 :normalized PApplet/NORMALIZED})
+                 :normalized PApplet/NORMAL})
 
 (defn
     ^{:requires-bindings true
